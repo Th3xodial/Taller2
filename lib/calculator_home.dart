@@ -15,19 +15,21 @@ class _CalculatorHomeState extends State<CalculatorHome> {
   String _resultText = '0';
   double _equationFontSize = CalculatorHome.fontSizeMedium;
   double _resultFontSize = CalculatorHome.fontSizeBig;
+  /*Todo Actividad2: Se añade el SingleChildScrollView para que tenga desplazamiento
+  * también se pone los Flexible para que no se desestructure y se fije su posición */
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Calculator')),
-      body: SafeArea(
-        child:Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            _equationPanel(),
-            _resultPanel(),
-            _buttonPanel(),
-          ],
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Flexible(flex: 2, fit: FlexFit.tight, child: _equationPanel()),
+          Flexible(flex: 2, fit: FlexFit.tight, child: _resultPanel()),
+          Expanded(flex: 5, child: SingleChildScrollView(
+            child: _buttonPanel(),
+          ))
+        ],
       ),
     );
   }
