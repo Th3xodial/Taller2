@@ -17,10 +17,12 @@ class _CalculatorHomeState extends State<CalculatorHome> {
   double _resultFontSize = CalculatorHome.fontSizeBig;
   /*Todo Actividad2: Se añade el SingleChildScrollView para que tenga desplazamiento
   * también se pone los Flexible para que no se desestructure y se fije su posición */
+  //Todo Actividad3: Se pone el fondo de color negro
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Calculator')),
+      backgroundColor: Colors.black,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
@@ -33,29 +35,26 @@ class _CalculatorHomeState extends State<CalculatorHome> {
       ),
     );
   }
+  //Todo Actividad3: Se pone el fondo de color negro
   Widget _equationPanel(){
     return Container(
       alignment: Alignment.centerRight,
+      color: Colors.black,
       padding: EdgeInsets.all(10),
       child: Text(
         _equationText,
-        style: TextStyle(fontSize: _equationFontSize),
+        style: TextStyle(fontSize: _equationFontSize,color: Colors.white),
       ),
     );
   }
   /*Todo Actividad1: Se fija el ancho del contenedor con la propiedad height para que no se modifique su tamaño y se añade un FittedBox
-  para que se vaya ajustando a la cantidad de números y siempre se muestre en número completo */
+  *para que se vaya ajustando a la cantidad de números y siempre se muestre en número completo */
+  //Todo Actividad3: Se pone el fondo de color negro
   Widget _resultPanel(){
     return Container(
       alignment: Alignment.centerRight,
       margin: EdgeInsets.all(1.0),
-      decoration: BoxDecoration(
-        color: Colors.grey.shade200,
-        border: Border.all(
-          color: Colors.blue.shade200,
-          width: 2,
-        ),
-      ),
+      color: Colors.black,
       padding: EdgeInsets.all(10),
       height: 80,
       child: FittedBox(
@@ -69,11 +68,12 @@ class _CalculatorHomeState extends State<CalculatorHome> {
       ),
     );
   }
+  //Todo Actividad3: Se redondean los bordes del botón
   Widget _calcButton(String text, Color color){
     return Container(
       margin: EdgeInsets.all(1.0),
       padding: EdgeInsets.all(10.0),
-      decoration: BoxDecoration(color: color,),
+      decoration: BoxDecoration(color: color,borderRadius: BorderRadius.circular(50)),
       child: TextButton(
         child: Text(
           text,
@@ -83,48 +83,49 @@ class _CalculatorHomeState extends State<CalculatorHome> {
       ),
     );
   }
+  //Todo Actividad3: Se le cambian los colores a los botones y al container
   Widget _buttonPanel(){
     return Container(
-      color: Colors.grey.shade300,
+      color: Colors.black,
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           Row(
             children: <Widget>[
-              Expanded(child:_calcButton('C', Colors.orange),),
-              Expanded(child:_calcButton('DEL', Colors.redAccent),),
-              Expanded(child:_calcButton('%', Colors.lightBlue),),
-              Expanded(child:_calcButton('÷', Colors.lightBlue),),
+              Expanded(child:_calcButton('C', Colors.grey.shade400),),
+              Expanded(child:_calcButton('DEL', Colors.grey.shade400),),
+              Expanded(child:_calcButton('%', Colors.grey.shade400),),
+              Expanded(child:_calcButton('÷', Colors.orange),),
             ],
           ),
           Row(
             children: <Widget>[
-              Expanded(child:_calcButton('7', Colors.grey.shade400),),
-              Expanded(child:_calcButton('8', Colors.grey.shade400),),
-              Expanded(child:_calcButton('9', Colors.grey.shade400),),
-              Expanded(child:_calcButton('×', Colors.lightBlue),),
+              Expanded(child:_calcButton('7', Colors.grey.shade700),),
+              Expanded(child:_calcButton('8', Colors.grey.shade700),),
+              Expanded(child:_calcButton('9', Colors.grey.shade700),),
+              Expanded(child:_calcButton('×', Colors.orange),),
             ],
           ),
           Row(
             children: <Widget>[
-              Expanded(child:_calcButton('4', Colors.grey.shade400),),
-              Expanded(child:_calcButton('5', Colors.grey.shade400),),
-              Expanded(child:_calcButton('6', Colors.grey.shade400),),
-              Expanded(child:_calcButton('-', Colors.lightBlue),),
+              Expanded(child:_calcButton('4', Colors.grey.shade700),),
+              Expanded(child:_calcButton('5', Colors.grey.shade700),),
+              Expanded(child:_calcButton('6', Colors.grey.shade700),),
+              Expanded(child:_calcButton('-', Colors.orange),),
             ],
           ),
           Row(
             children: <Widget>[
-              Expanded(child:_calcButton('1', Colors.grey.shade400),),
-              Expanded(child:_calcButton('2', Colors.grey.shade400),),
-              Expanded(child:_calcButton('3', Colors.grey.shade400),),
-              Expanded(child:_calcButton('+', Colors.lightBlue),),
+              Expanded(child:_calcButton('1', Colors.grey.shade700),),
+              Expanded(child:_calcButton('2', Colors.grey.shade700),),
+              Expanded(child:_calcButton('3', Colors.grey.shade700),),
+              Expanded(child:_calcButton('+', Colors.orange),),
             ],
           ),
           Row(
             children: <Widget>[
-              Expanded(child:_calcButton('0', Colors.grey.shade400),),
-              Expanded(child:_calcButton('.', Colors.grey.shade400),),
+              Expanded(child:_calcButton('0', Colors.grey.shade700),),
+              Expanded(child:_calcButton('.', Colors.grey.shade700),),
               Expanded(child:_calcButton('=', Colors.orange), flex: 2,),
             ],
           ),
