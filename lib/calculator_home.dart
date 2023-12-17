@@ -41,6 +41,8 @@ class _CalculatorHomeState extends State<CalculatorHome> {
       ),
     );
   }
+  /*Todo Actividad1: Se fija el ancho del contenedor con la propiedad height para que no se modifique su tamaño y se añade un FittedBox
+  para que se vaya ajustando a la cantidad de números y siempre se muestre en número completo */
   Widget _resultPanel(){
     return Container(
       alignment: Alignment.centerRight,
@@ -53,11 +55,14 @@ class _CalculatorHomeState extends State<CalculatorHome> {
         ),
       ),
       padding: EdgeInsets.all(10),
-      child: Text(
-        _resultText,
-        style: TextStyle(
-          fontSize: _resultFontSize,
-          color: Colors.blue.shade700,
+      height: 80,
+      child: FittedBox(
+        child: Text(
+          _resultText,
+          style: TextStyle(
+            fontSize: _resultFontSize,
+            color: Colors.blue.shade700,
+          ),
         ),
       ),
     );
