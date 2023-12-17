@@ -1,16 +1,6 @@
 # t2_calculadora
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+En esta rama se realiza la actividad de la 1 a la 4
+donde se corrige el problema de tamaño de los número cuando son muchos,
+se añade un scroll para que los botones se vean a pesar de girar la aplicación
+y se añade una nueva distribución de los botones para la orientacion horizontal 
+se añade videos de cada uno de los cambios realizados.
